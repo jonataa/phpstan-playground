@@ -5,25 +5,33 @@ namespace App;
 class Examples extends Base
 {
 
+    /** @var int */
+    protected $number;
+
+    /** @var string */
+    protected $operator;
+
     public function __construct(int $number, string $operator)
     {
         $this->number = $number;
+        $this->operator = $operator;
+        parent::__construct($number);
     }
 
     public function one(string $text): string
     {
-        return sprintf('Error: %s', $text, '!');
+        return sprintf('Error: %s%s', $text, '!');
     }
 
     public function two(): string
     {
-        return (string) 'foo';
+        return 'foo';
     }
 
     /**
      * Foo Bar
      *
-     * @param \DateTimeImmutable $date
+     * @param \DateTimeImmutable[] $dates
      * @return string
      */
     public function four(array $dates): string
@@ -35,13 +43,18 @@ class Examples extends Base
     public function five(): array
     {
         return [
-            'foo' => 'b4r',
             'foo' => 'bar',
             'fizz' => 'buzz',
         ];
     }
 
-    public function six(string $numbers)
+    /**
+     * Sum array numbers.
+     *
+     * @param int[] $numbers
+     * @return int
+     */
+    public function six(array $numbers): int
     {
         $sum = 0;
         foreach ($numbers as $number) {
@@ -50,13 +63,13 @@ class Examples extends Base
         return $sum;
     }
 
-    public function seven(string $number)
+    public function seven(int $number)
     {
-        if (1 === '1') {
+        if (1 == '1') {
             echo 'fizz';
         }
 
-        $isFalse = 1 !== 1;
+        $isFalse = 1 != '1';
 
         if (false !== $isFalse) {
             echo 'buzz';
@@ -67,15 +80,22 @@ class Examples extends Base
         }
     }
 
-    public function eigth()
+    public function eigth($n)
     {
+        if ($n > 0) {
+            $notFound = 321;
+        }
+
         $never = isset($notFound);
         
-        $found = 123;
+        if ($n <= 0) {
+            $found = 123;
+        }
+
         $always = isset($found);
     }
 
-    public function nine(int $object)
+    public function nine(object $object)
     {
         $newObject = clone $object;
     }
@@ -88,7 +108,7 @@ class Examples extends Base
      */
     public function ten(array $values): string
     {    
-        $this->ten(['hello', 'world']);
+        $this->ten([1, 2.5, 8, 10.1]);
     }
 
     public function eleven(): string

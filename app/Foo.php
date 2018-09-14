@@ -4,7 +4,7 @@ namespace App;
 
 class Foo
 {
-    public function bar(\DateTimeImutable $date)
+    public function bar(\DateTimeImmutable $date)
     {
         echo $date->format('d/m/Y');
     }
