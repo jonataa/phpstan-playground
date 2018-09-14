@@ -1,5 +1,7 @@
 language: php
 php:
   - '7.1'
-install: composer install
-script: make analyse
+install: 
+  - composer install
+script: 
+  - make analyse
