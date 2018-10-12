@@ -4,10 +4,11 @@ namespace App;
 
 class Examples extends Base
 {
+    protected $half;
 
     public function __construct(int $number, string $operator)
     {
-        $this->number = $number;
+        $this->half = $number / 2;
     }
 
     public function one(string $text): string
