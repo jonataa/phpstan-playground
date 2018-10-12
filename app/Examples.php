@@ -42,7 +42,7 @@ class Examples extends Base
         ];
     }
 
-    public function six(string $numbers)
+    public function six(int $numbers): int
     {
         $sum = 0;
         foreach ($numbers as $number) {
@@ -51,19 +51,19 @@ class Examples extends Base
         return $sum;
     }
 
-    public function seven(string $number)
+    public function seven(string $numberStr)
     {
         if (1 === '1') {
             echo 'fizz';
         }
 
-        $isFalse = 1 !== 1;
+        $isFalse = 1 !== 1; // false
 
         if (false !== $isFalse) {
             echo 'buzz';
         }
 
-        if (is_int($number)) {
+        if (is_int($numberStr)) {
             echo 'foobar';
         }
     }
@@ -82,7 +82,7 @@ class Examples extends Base
     }
 
     /**
-     * Does anything.
+     * Anything.
      *
      * @param (int|float)[] $values
      * @return string

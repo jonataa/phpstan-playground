@@ -1,3 +1,3 @@
 <?php
 
-define('NUMBERS', [1, 2, 3]);
+// define('NUMBERS', [1, 2, 3]);
