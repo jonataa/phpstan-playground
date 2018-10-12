@@ -9,11 +9,11 @@ class Base
     protected $number;
 
     /** @var int */
-    protected $double;
+    protected $doubleNumber;
 
     public function __construct(int $number)
     {
         $this->number = $number;
-        $this->double = $number * 2;
+        $this->doubleNumber = $this->number * 2;
     }    
 }
